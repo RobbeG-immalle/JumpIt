@@ -1,4 +1,4 @@
-int miliseconds = 100;
+int miliseconds = 420;
 
 void displayTimer()
 {
@@ -17,7 +17,7 @@ void stopTimer()
 }
 void resetTimer()
 {
-  miliseconds = 100;
+  miliseconds = 420;
 }
 void startTimer()
 {

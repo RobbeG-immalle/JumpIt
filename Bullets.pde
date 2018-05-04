@@ -1,8 +1,8 @@
 PImage rocket;
 int[] yCoord = { 70, 170, 270, 370, 470, 570, 670 };
 int startX = 1200;
-int rRichting = 0;
 int startX2 = 1200;
+int rRichting = 0;
 int speed = 3;
 int speed2 = 2;
 float rnd = random(0, 7);
@@ -20,30 +20,56 @@ void maakRocket()
 }
 void toonRockets()
 {
-  rocket = loadImage("Rocket.png");
-  rocket.resize(50, 20);
+  /*rocket = loadImage("Rocket.png");
+  rocket.resize(50, 20);*/
   for(int i = 0; i<yCoord.length; i++)
    {
    image(rocket,startX,yCoord[i]);   
    }
 }
-/*void maakMeerRockets()
+/*void respawnRockets()
 {
+    rocket = loadImage("Rocket.png");
+    rocket.resize(50, 20);
+}*/
+void resetX()
+{
+  startX = 1200;
+}
+void showNewRockets()
+{
+  resetX();
+  for(int i = 0; i<yCoord.length; i++)
+   {
+   image(rocket,startX,yCoord[i]);   
+   }
+}
+void maakMeerRockets()
+{
+  
   rocket = loadImage("Rocket.png");
   rocket.resize(50, 20);
   for(int i = 0; i<yCoord.length; i++)
    {
    image(rocket,startX2,yCoord[i]);   
    }
-}*/
-void resetXpos()
+}
+void respawnWave2()
 {
-  startX = 1200;
+  resetX2();
+  for(int i = 0; i<yCoord.length; i++)
+   {
+   image(rocket,startX,yCoord[i]);   
+   }
+}
+void resetX2()
+{
+  startX2 = 1200;
 }
 void moveRockets()
 {
   startX = startX - speed;
-  startX2 = startX2 -speed2;
+  startX2 = startX2 - speed2;
 }
 void spawnRockets()
 {
